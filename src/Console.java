@@ -18,6 +18,7 @@ public class Console {
         commands.put("stop",  new Stop());
         commands.put("citat", new Citat());
         commands.put("history", new History());
+        commands.put("kvrvc", new KvadraticRvc());
     }
 
     public void execute(){
