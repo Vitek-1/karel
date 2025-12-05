@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -15,6 +16,8 @@ public class Console {
     public void inicialization(){
         commands.put("date",  new Date());
         commands.put("stop",  new Stop());
+        commands.put("citat", new Citat());
+        commands.put("history", new History());
     }
 
     public void execute(){
@@ -22,6 +25,7 @@ public class Console {
         String command = scanner.next();
         command = command.trim().toLowerCase();
         if (commands.containsKey(command)){
+            History.addHistory(command);
             System.out.println(commands.get(command).execute());
             isExit = commands.get(command).exit();
         }else {
